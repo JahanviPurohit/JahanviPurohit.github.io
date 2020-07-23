@@ -1,0 +1,118 @@
+<HTML>
+<HEAD> 
+<TITLE> Calculator</TITLE> 
+<script>
+var opt, temp;
+function digit(btn)
+  {
+   var s= document.getElementById("t1").value;
+   s=s+btn.value;
+   document.getElementById("t1").value=s;
+  }
+function dot(btn)
+  {
+   var s= document.getElementById("t1").value;
+   s=s+btn.value;
+   document.getElementById("t1").value=s;
+  }
+function sign(btn)
+  {
+   temp= document.getElementById("t1").value;
+   opt=btn.value;
+   document.getElementById("t1").value="";
+  }
+function equal()
+  {
+   switch(opt)
+    {
+     case '+':
+     var a= parseFloat(temp)+parseFloat(document.getElementById("t1").value);
+     document.getElementById("t1").value=a;
+     break;
+     case '-':
+     var a= parseFloat(temp)-parseFloat(document.getElementById("t1").value);
+     document.getElementById("t1").value=a;
+     break;
+     case '*':
+     var a= parseFloat(temp)*parseFloat(document.getElementById("t1").value);
+     document.getElementById("t1").value=a;
+     break;
+     case '/':
+     var a= parseFloat(temp)/parseFloat(document.getElementById("t1").value);
+     document.getElementById("t1").value=a;
+     break;
+    }
+  }
+</script>
+
+<STYLE>
+.txt	 {
+	  color: black;
+	  width: 250px;
+	  height: 50px;
+	  background-color: #d37dd393;
+	  padding: 6px;
+	  font-size: 30px;
+	  text-align: right;
+	  border-color: #fbea54;
+	  border-style: dotted;
+	  border-width: 7px;
+	  border-radius: 22px;
+	 }
+.txt:hover { background-color: #d2a9d2; }
+.btn
+	 {
+	  color: #ee0406;
+	  width: 70px;
+	  font-size: 40px;
+	  text-align: center;
+	  background-color: #3be2b788;
+	  border-width: 6px;
+          border-style: inset;
+          border-color: #55c5fafc;
+	  border-radius: 12px;
+	 }
+.btn:hover { background-color: #e49a9a; color: black; }
+  h3 {
+	color: #6a55cfba; text-align: center; font-size: 53px;
+	text-shadow: 2px 2px red, 3px 3px yellow;
+     } 
+</STYLE>
+</HEAD>
+
+<BODY bgcolor="green" style="background-image: url(Tulips.jpg), url(Hydrangeas.jpg); background-position: right bottom, center; background-repeat: no-repeat, repeat; background-size: 350px, 1100px;"> 
+ 
+<TABLE border= 6 bordercolor="red" width='20%' height= 'auto' align= 'center' cellspacing="0" cellpading="5"> 
+<CAPTION align="top"><h3><i> <u>Calculator</u></i></h3></CAPTION>
+
+<TR>
+<TH colspan=3> <input type='text' id="t1" name= 'display' class="txt"></TH>
+<TD align="center"> <INPUT TYPE="reset" value="C" style=" background-color: #ff0000cf; color: white;" class='btn'> </TD>
+</TR>
+<TR>
+<TD align="center"> <INPUT TYPE="button" value="7" class='btn' onclick="digit(this)"> </TD>
+<TD align="center"> <INPUT TYPE='button' value="8" class='btn' onclick="digit(this)"> </TD>
+<TD align="center"> <INPUT TYPE="button" value="9" class='btn' onclick="digit(this)"> </TD>
+<TD align="center"> <INPUT TYPE="button" value="/" class='btn' onclick="sign(this)"> </TD>
+</TR>
+<TR>
+<TD align="center"> <INPUT TYPE="button" value="4" class='btn' onclick="digit(this)"> </TD>
+<TD align="center"> <INPUT TYPE='button' value="5" class='btn' onclick="digit(this)"> </TD>
+<TD align="center"> <INPUT TYPE="button" value="6" class='btn' onclick="digit(this)"> </TD>
+<TD align="center"> <INPUT TYPE="button" value="*" class='btn' onclick="sign(this)"> </TD>
+</TR>
+<TR>
+<TD align="center"> <INPUT TYPE="button" value="1" class='btn' onclick="digit(this)"> </TD>
+<TD align="center"> <INPUT TYPE='button' value="2" class='btn' onclick="digit(this)"> </TD>
+<TD align="center"> <INPUT TYPE="button" value="3" class='btn' onclick="digit(this)"> </TD>
+<TD align="center"> <INPUT TYPE="button" value="-" class='btn' onclick="sign(this)"> </TD>
+</TR>  
+<TR>
+<TD align="center"> <INPUT TYPE="button" value="0" class='btn' onclick="digit(this)"> </TD>
+<TD align="center"> <INPUT TYPE='button' value="." class='btn' onclick="digit(this)"> </TD>
+<TD align="center"> <INPUT TYPE="button" value="=" class='btn' onclick="equal()"> </TD>
+<TD align="center"> <INPUT TYPE="button" value="+" class='btn' onclick="sign(this)"> </TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>
